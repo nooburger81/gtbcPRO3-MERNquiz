@@ -7,6 +7,42 @@ const { loginValidator, registerValidator } = require('../validators/validators'
 
 const router = express.Router();
 
+router.post('/login', (req, res) => {
+    const { errors, isValid } = loginValidator(req.body);
+    if (!isValid) {
+        res.json({ success: false, errors });
+    } else {
+        Users.findOne({ email: req.body.email }).then(user => {
+                    if (!user) {
+                        res.json({ message: 'Invalid Email', success: false });
+                    } else {
+                        bcrypt.compare(req.body.password, user.password).then(success => {
+                            if (!success) {
+                                res.json({ message: 'Invalid Password', success: false });
+                            } else {
+                                const payload = {
+                                    id: user._id,
+                                    name: user.firstName
+                                }
+                                jwt.sign(
+                                    payload, 
+                                    process.env.APP_SECRET, {
+                                    expiresIn: '1h'
+                                },
+                                (err, token) => {
+                                    res.json({ 
+                                        user, 
+                                        token: 'Bearer token: ' + token, 
+                                        success: true
+                                })
+                            });
+                    }});
+                             
+    }});
+                    }
+                });
+
+
 router.post('/register', (req, res) => {
     const { errors, isValid } = registerValidator(req.body);
     if (!isValid) {
@@ -34,5 +70,13 @@ bcrypt.genSalt(10, (err, salt) => {
 })
         }
     });
+
+    router.get('/:id', checkAuth, (req, res) => {
+        Users.findOne({ _id: req.params.id }).then(user => {
+            res.json({ user, success: true })
+        }).catch(err => {
+            res.json({ success: false, message: err.message })
+        })
+    })
 
 module.exports = router;
