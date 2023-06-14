@@ -8,11 +8,11 @@ const { loginValidator, registerValidator } = require('../validators/validators'
 const router = express.Router();
 
 router.post('/register', (req, res) => {
-    const { error, isValid } = registerValidator(req.body);
+    const { errors, isValid } = registerValidator(req.body);
     if (!isValid) {
-            res.json({success: false, errors});
+            res.json({ success: false, errors });
         } else {
-            const {firstName, lastName, email, password} = req.body;
+            const { firstName, lastName, email, password } = req.body;
             const registerUser = new Users({
                 firstName,
                 lastName,
@@ -21,7 +21,7 @@ router.post('/register', (req, res) => {
                 createdAt: new Date()
 });
 bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(registerUser.password, salt, (err, hash) => {
+    bcrypt.hash(registerUser.password, salt, (hashErr, hash) => {
         if (err || hashErr) {
             res.json({ message: 'Error in hashing', success: false });
             return;
