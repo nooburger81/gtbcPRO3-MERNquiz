@@ -20,5 +20,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.2.4",
     "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
   }
 }
