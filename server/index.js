@@ -18,7 +18,7 @@ app.use(bodyParser.json({ limit: '20mb' }));
 
 app.use('/api/users', userRoutes);
 
-mongoose.connect(process.env.DB_URI, {
+mongoose.connect(process.env.DB_URI || 'mongodb://127.0.0.1:27017/mernquiz-app', {
     useUnifiedTopology: true,
     useNewUrlParser: true
 }).then(() => console.log('Connected to DB!'))
