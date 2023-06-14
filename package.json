@@ -4,12 +4,11 @@
   "description": "MERN Stack Quiz Game",
   "main": "index.js",
   "scripts": {
-    "install": "cd server && npm i && cd ../client && npm i",
-    "dev": "concurrently \"cd server && nodemon index.js\" \"cd client && npm start\"",
+    "install": "cd server && npm install && cd ../ && cd client && npm install",
+    "start": "node server/index.js",
     "build": "cd client && npm run build",
-    "start": "npm run build && cd server && nodemon index.js",
-    "server": "cd server && nodemon index.js",
-    "client": "cd client && npm run start"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\""
   },
   "keywords": [],
   "author": "",
