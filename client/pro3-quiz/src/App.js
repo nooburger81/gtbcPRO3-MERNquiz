@@ -1,11 +1,13 @@
+import React from'react';
 
-
-function App() {
+class App extends React.Component {
+  render() {
   return (
-    <div>
+    <div class>
       
     </div>
   );
+}
 }
 
 export default App;
