@@ -1,6 +1,7 @@
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Regiser from "./components/Register";
+import Page from "./components/Page";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Home />
       <Login />
       <Regiser />
+      <Page />
     </div>
   );
 }
