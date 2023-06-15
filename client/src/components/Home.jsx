@@ -1,10 +1,11 @@
 import React from 'react'
 import 'animate.css'
 import Nugget from '../assets/nuggies.png'
+import { Link } from 'react-scroll'
 
 const Home =  () => {
   return (
-    <div name='home' className='w-full h-screen bg-pink-400'>
+    <div name='home' className='w-full h-screen bg-pink-400 flex'>
       {/* Container */}
       <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
     <h1 className='text-4xl sm:text-7xl font-bold text-[#90d36e] flex justify-center animate__animated animate__fadeInDown animate__delay-1s'>
