@@ -14,8 +14,10 @@ const Home =  () => {
     <h2 className='text-4xl sm:text-7xl font-bold text-[#4195ae] flex justify-center animate__animated animate__bounceInUp animate__delay-2s '>
           A Friendly Quiz Game
         </h2>
+        <Link to='login' smooth={true} duration={500}>
         <button className='w-20 cursor-pointer' type='submit'><img src={Nugget} alt='chicken nugget' />
         </button>
+        </Link>
         </div>
         <div>
         
