@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { quiz } from 'client/src/components/data.js';
+import { quiz } from './data';
 
 const Page = () => {
 
