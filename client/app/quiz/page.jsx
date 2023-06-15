@@ -82,7 +82,23 @@ const page = () => {
                 )}
             </div>
             ) : (
-            <div className='quiz-container'></div>
+            <div className='quiz-container'>
+                <h3>Results</h3>
+                <h3>Total {(result.score / 25) * 100}%</h3>
+                <p>
+                    Total Questions: <span>{questions.length}</span>
+                </p>
+                <p>
+                    Total Score: <span>{result.score}</span>
+                </p>
+                <p>
+                    Correct Answers: <span>{result.correctAnswers}</span>
+                </p>
+                <p>
+                    Wrong Answers: <span>{result.wrongAnswers}</span>
+                </p>
+                <button onClick={() => window.location.reload()}>Click Here to Play Again</button>
+            </div>
             )}
         </div>
     </div>
