@@ -1,5 +1,6 @@
 import React from 'react'
 import 'animate.css'
+import Nugget from '../assets/nuggies.png'
 
 const Home =  () => {
   return (
@@ -12,7 +13,12 @@ const Home =  () => {
     <h2 className='text-4xl sm:text-7xl font-bold text-[#4195ae] flex justify-center animate__animated animate__bounceInUp animate__delay-2s '>
           A Friendly Quiz Game
         </h2>
-    </div>
+        <button className='w-20 cursor-pointer' type='submit'><img src={Nugget} alt='chicken nugget' />
+        </button>
+        </div>
+        <div>
+        
+        </div>
     </div>
   );
 }
