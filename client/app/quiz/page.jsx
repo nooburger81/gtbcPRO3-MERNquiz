@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import { quiz } from './data';
+import { quiz } from '../data.js';
 
-const Page = () => {
+const page = () => {
 
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -52,7 +52,7 @@ const Page = () => {
     };
 
     return (
-    <div name='page'>
+    <div>
             <h1>Quiz Page</h1>
         <div>
             <h2>
@@ -105,4 +105,4 @@ const Page = () => {
     );
 };
 
-export default Page
+export default page
