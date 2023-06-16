@@ -24,7 +24,7 @@ const Login = () => {
                         <input className="input" type="password" placeholder="Password" value={password}
                     onChange={ e => setPassword(e.target.value) }/>
                     </div>
-                    <div className="btn" onClick={() => SignIn({ email, password })}>
+                    <div className="btn" onClick={() => ({ email, password })}>
                         Sign in
                     </div> 
                 </div> 
