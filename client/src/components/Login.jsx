@@ -1,28 +1,31 @@
-import React from 'react'
-import Nugget from '../assets/nuggies.png'
+import React from 'react';
 
-const Login = () => {
-  return (
-    <div name='login' className='w-full h-screen flex'>
-       <div className='grid grid-cols-1 md:grid-cols-2 m-auto h-[550px] shadow-lg shadow-gray-500 sm:max-w-[900px]'>
-        <div className='w-full h-full bg-pink-400 hidden md:block'>
-            <img className='w-full h-full' src={Nugget} alt='chicken nugget' />
-        </div>
-        <div className='p-4 flex flex-col justify-around items-center'>
-            <form>
-                <h2 className='text-4xl font-bold text-center mb-8'>Meet Your Maker</h2>
-                <div>
-                    <input className='border p-2 mr-2' type="text" placeholder='Email' />
-                    <input className='border p-2' type="password" placeholder='Password' />
-                </div>
-                <button className='w-full py-2 my-4 bg-green-300 hover:bg-green-200'>Sign In To Play</button>
-                <p className='text-center'>Forgot Email or Password?</p>
-            </form>
-            <p className='text-center'>Register New Player</p>
-        </div>
-       </div>
-    </div>
-  )
+export default class Signin extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+        }
+    }
+
+    render() {
+        return ( 
+            <div className="sign-in-wrapper">
+                <div className="form">
+                    <div className="input-wrapper">
+                        <div>Email Address</div> 
+                        <input className="input" type="text" placeholder="Email Address" value={this.state.email} onChange={ e => this.setState({ email: e.target.value }) } />
+                    </div>
+                    <div className="input-wrapper">
+                      <div>Password</div> 
+                      <input className="input" type="password" placeholder="Password" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} />
+                    </div>
+            
+                    <div className="btn" onClick={() => this.props.signIn(this.state.email, this.state.password)}>Sign in</div> 
+                </div> 
+            </div>
+        )
+    }
 }
-
-export default Login
