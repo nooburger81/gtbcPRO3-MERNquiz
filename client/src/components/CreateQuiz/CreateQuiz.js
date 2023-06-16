@@ -53,9 +53,9 @@ const CreateQuiz = () => {
             mustBeLoggedIn: mustBeLoggedIn,
             name: name,
             questions: questions,
+            category: category,
         };
-        axios.post('/api/quizzzes/create', { quiz })
-            .then((res) => {
+        axios.post('/api/quizzzes/create', {quiz}).then((res) => {
                 console.log(res.data);
             })
             .catch((err) => {
