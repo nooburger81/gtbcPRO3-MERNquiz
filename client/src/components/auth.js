@@ -17,6 +17,7 @@ export default class Auth extends React.Component {
     }
 
     signIn = (email, password) => {
+        console.log(email, password);
         axios.post('/api/users/login', {email, password}).then(res => {
             if (res.data.success) {
                 store.dispatch({
@@ -45,6 +46,7 @@ export default class Auth extends React.Component {
     }
 
     signUp = ({firstName, lastName, email, password}) => {
+        console.log(firstName, lastName, email, password);
         axios.post('/api/users/register', {firstName, lastName, email, password}).then(res => {
             if (res.data.success) {
                 this.setState({tab: 'signin'});

@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import { quiz } from './data.js';
+import './page.css';
+
 
 const Page = () => {
 
@@ -52,7 +54,7 @@ const Page = () => {
     };
 
     return (
-    <div name='page'>
+    <div className='container'>
             <h1>Quiz Page</h1>
         <div>
             <h2>
