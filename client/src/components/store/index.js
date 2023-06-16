@@ -1,28 +1,33 @@
-import {createStore} from 'redux';
+import React from 'react';
+import { UserProvider, useUserContext } from './UserContext';
 
-const initState = {
-    user: null
-}
+const App = () => {
+  return (
+    <UserProvider>
+      <MainComponent />
+    </UserProvider>
+  );
+};
 
-const reducer = (state = initState, action) => {
-    if (action.type === 'login') {
-        localStorage.setItem('JWT_PAYLOAD', action.token);
-        localStorage.setItem('_ID', action._id);
+const MainComponent = () => {
+  const { state, dispatch } = useUserContext();
 
-        return {
-            ...state, 
-            user: action.user
-        }
-    } else if (action.type === 'set_user') {
-        return {
-            ...state, 
-            user: action.user
-        }
-    } else {
-        return state;
-    }
-}
+  const handleLogin = () => {
+    // Dispatch login action
+    dispatch({
+      type: 'login',
+      token: 'your_token',
+      _id: 'your_id',
+      user: { name: 'John Doe' }
+    });
+  };
 
-const store = createStore(reducer);
+  return (
+    <div>
+      <h1>User: {state.user ? state.user.name : 'Not logged in'}</h1>
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+};
 
-export default store;
+export default App;
