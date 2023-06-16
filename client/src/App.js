@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React from 'react';
+
 import Auth from './components/auth.js';
-import Page from './components/Page.jsx'
+import Page from './components/Page.jsx';
+import CreateQuiz from '/components/CreateQuiz/createQuiz.js';
 
 import store from './components/store';
 
@@ -24,6 +26,7 @@ render() {
   return (
     <div>
       <Auth />
+      <route path="/create-quiz" compoents={CreateQuiz}/>
       <Page />
       
     </div>
