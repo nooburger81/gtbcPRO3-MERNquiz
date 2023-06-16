@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import Auth from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/auth.js';
-import Page from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Page.jsx'
+import Auth from './components/auth.js';
+import Page from './components/Page.jsx'
 
 import store from './components/store';
 
