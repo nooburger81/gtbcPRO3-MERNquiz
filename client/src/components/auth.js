@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Signin from './Login.jsx';
 import Signup from './Register';
 import axios from 'axios';
@@ -8,8 +8,8 @@ import Nugget from '../assets/nuggies.png';
 // import SignIn from './Login';
 
 const Auth = () => {
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [showToast, setShowToast] = useState(false);
     const [tab, setTab] = useState('signin');
 
@@ -26,9 +26,9 @@ const Auth = () => {
                 // this.props.history.push('/dashboard');
             } else {
                 setShowToast(true);
-                setTimeout(() => {
-                    setShowToast: (false)
-                }, 3000);
+                // setTimeout(() => {
+                //     setShowToast: (false)
+                // }, 3000);
             }
         }).catch(err => {
             setShowToast(true);
@@ -64,14 +64,14 @@ const Auth = () => {
 
                 <div className="right">
                     <div className="header">
-                        Quiz itt
+                        Whatchoo Know 'Bout Me?'
                     </div>
                     <div className="sub-header">
-                        Welcome to Quiz itt
+                        A Friendly Quiz Game
                     </div>
                     {page}
                     <div className="new" onClick={changeTab}>
-                        {tab === 'signin' ? 'New to Quiz itt? Sign up here' : 'Already have an account with us? Sign in'}
+                        {tab === 'signin' ? 'New to WKBM? Sign up here' : 'Already have an account with us? Sign in'}
                     </div>
                 </div>
             </div>
