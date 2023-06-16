@@ -13,7 +13,7 @@ constructor(props) {
 
  render() {
       return (
-          <div name='register' className="sign-in-wrapper">
+          <div className="sign-in-wrapper">
               <div className="form">
                   <div className="input-wrapper">
                       <div>Email Address</div> 

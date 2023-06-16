@@ -1,9 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import Auth from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Auth.js';
-import Login from "/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Login.jsx";
-import Register from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Register.jsx'
 import Page from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Page.jsx'
 
 import store from './components/store';
@@ -27,8 +24,6 @@ render() {
   return (
     <div>
       <Auth />
-      <Login />
-      <Register />
       <Page />
       
     </div>
