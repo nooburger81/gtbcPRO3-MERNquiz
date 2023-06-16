@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Signin from './Login.jsx';
+import Signin from './Login';
 import Signup from './Register';
 import axios from 'axios';
-import store from './store/index';
+import store from './store/index'; 
 import Toast from './toast/Toast';
 import Nugget from '../assets/nuggies.png';
 // import SignIn from './Login';
@@ -53,7 +53,7 @@ const Auth = () => {
         setTab(tab === 'signup' ? 'signin' : 'signup');
     };
 
-        let page = tab === 'signin' ? <signIn signIn={Signin}/> : <signUp signUp={Signup}/>
+        // let page = tab === 'signin' ? <signIn signIn={Signin}/> : <signUp signUp={Signup}/>
 
         return (
             <div className="auth-wrapper">
@@ -69,7 +69,7 @@ const Auth = () => {
                     <div className="sub-header">
                         A Friendly Quiz Game
                     </div>
-                    {page}
+                    {/* {page} */}
                     <div className="new" onClick={changeTab}>
                         {tab === 'signin' ? 'New to WKBM? Sign up here' : 'Already have an account with us? Sign in'}
                     </div>
