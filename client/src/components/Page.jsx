@@ -1,4 +1,3 @@
-'use client'
 import React, { useState } from 'react';
 import { quiz } from './data.js';
 import './page.css';
@@ -86,7 +85,7 @@ const Page = () => {
             ) : (
             <div className='quiz-container'>
                 <h3>Results</h3>
-                <h3>Total {(result.score / 25) * 100}%</h3>
+                <h3>Total {(result.score / 2500) * 100}%</h3>
                 <p>
                     Total Questions: <span>{questions.length}</span>
                 </p>

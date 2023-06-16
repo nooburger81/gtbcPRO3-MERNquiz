@@ -1,22 +1,19 @@
-import React from 'react';
-import Signup from './Login';
-import Signin from './Register';
+import React, { useState } from 'react';
+import Signin from './Login.jsx';
+import Signup from './Register';
 import axios from 'axios';
 import store from './store/index';
 import Toast from './toast/Toast';
 import Nugget from '../assets/nuggies.png';
+// import SignIn from './Login';
 
-export default class Auth extends React.Component {
+const Auth = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [showToast, setShowToast] = useState(false);
+    const [tab, setTab] = useState('signin');
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            tab: 'signin',
-            showToast: false
-        }
-    }
-
-    signIn = (email, password) => {
+    const Signin = (email, password) => {
         console.log(email, password);
         axios.post('/api/users/login', {email, password}).then(res => {
             if (res.data.success) {
@@ -26,58 +23,59 @@ export default class Auth extends React.Component {
                     user: res.data.user,
                     token: res.data.token
                 });
-                this.props.history.push('/dashboard');
+                // this.props.history.push('/dashboard');
             } else {
-                this.setState({
-                    showToast: true
-                });
-                setTimeout(() => {
-                    this.setState({showToast: false})
-                }, 3000);
+                setShowToast(true);
+                // setTimeout(() => {
+                //     setShowToast: (false)
+                // }, 3000);
             }
-        }).catch(er => {
-            this.setState({
-                showToast: true
-            });
+        }).catch(err => {
+            setShowToast(true);
             setTimeout(() => {
-                this.setState({showToast: false})
+                setShowToast(false)
             }, 3000);
         })
-    }
+    };
 
-    signUp = ({firstName, lastName, email, password}) => {
+    const Signup = ({ firstName, lastName, email, password }) => {
         console.log(firstName, lastName, email, password);
-        axios.post('/api/users/register', {firstName, lastName, email, password}).then(res => {
+        axios.post('/api/users/register', {firstName, lastName, email, password}).then((res) => {
             if (res.data.success) {
-                this.setState({tab: 'signin'});
+                setTab('signin');
             }
-        }).catch(er => {
-            console.log(er);
+        }).catch(err => {
+            console.log(err);
         })
-    }
+    };
 
-    changeTab = () => {
-        this.setState({
-            tab: this.state.tab === 'signup' ? 'signin' : 'signup'
-        });
-    }
+   const changeTab = () => {
+        setTab(tab === 'signup' ? 'signin' : 'signup');
+    };
 
-    render() {
-        let page = this.state.tab === 'signin' ? <Signin signIn={this.signIn} /> : <Signup signUp={this.signUp} />
+        let page = tab === 'signin' ? <signIn signIn={Signin}/> : <signUp signUp={Signup}/>
+
         return (
             <div className="auth-wrapper">
-                <Toast model={this.state.showToast} message="Incorrect login" backgroundColor="#FF4539" />
+                <Toast model={showToast} message="Incorrect login, Please Try Again" backgroundColor="#FF4539" />
                 <div className="left">
                     <img src={Nugget} alt='chicken nugget'/>
                 </div>
 
                 <div className="right">
-                    <div className="header">Quiz itt</div>
-                    <div className="sub-header">Welcome to Quiz itt</div>
+                    <div className="header">
+                        Whatchoo Know 'Bout Me?'
+                    </div>
+                    <div className="sub-header">
+                        A Friendly Quiz Game
+                    </div>
                     {page}
-                    <div className="new" onClick={this.changeTab}>{this.state.tab === 'signin' ? 'New to Quiz itt? Sign up here' : 'Already have an account with us? Sign in'}</div>
+                    <div className="new" onClick={changeTab}>
+                        {tab === 'signin' ? 'New to WKBM? Sign up here' : 'Already have an account with us? Sign in'}
+                    </div>
                 </div>
             </div>
         )
-    }
-}
+    };
+
+export default Auth
