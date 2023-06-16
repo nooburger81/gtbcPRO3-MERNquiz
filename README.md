@@ -4,7 +4,7 @@
 ### What is This Game I Have Never Heard Of?
 Whatchoo Know 'Bout Me is intended to be a fully customizable quiz game you create quizzes about you and your friends, and then send it to others to see how well they know the person! The app was built using the MERN stack, and features a login system, a customizable avatar, the ability to create your own custom questions and answers and a flashy UI. Even more features are coming soon!
 
-The team behid this project(GitHub profile links are at the bottom) were motivated by a mutual desire to create a game that promotes having fun with friends and more importantly, creating opportunites to learn more about your friends, and have your friends learn more about you! The process of building this app had a few frustrating and confusing moments(as every project does,) but was well worth the effort in the end. We hope you will enjoy playing this game, and if interested customizing it to better suit your needs! Instructions for forking this repo are below:
+The team behid this project(GitHub profile links are at the bottom) were motivated by a mutual desire to create a game that promotes having fun with friends and more importantly, creating opportunites to learn more about your friends, and having your friends learn more about you! The process of building this app had a few frustrating and confusing moments(as every project does,) but was well worth the effort in the end. We hope you will enjoy playing this game, and if interested customizing it to better suit your needs! Instructions for forking this repo are below:
 
 ## Forking This Repo for Further Personalization
 1. On GitHub.com, navigate to [this](https://github.com/nooburger81/gtbcPRO3-MERNquiz) repo.
