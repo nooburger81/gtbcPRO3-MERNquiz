@@ -13,7 +13,7 @@ const Login = () => {
                     <div>
                         Email Address
                     </div> 
-                        <input className="input" type="text" placeholder="Email Address" value={email}
+                        <input className='input' type="text" placeholder="Email Address" value={email}
                     onChange={ e => setEmail(e.target.value) }/>
 
                     </div>
