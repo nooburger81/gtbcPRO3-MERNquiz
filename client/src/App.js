@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import Auth from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/auth.js';
 import Page from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Page.jsx'
-
+import CreateQuiz from '/components/CreateQuiz/createQuiz.js'
 import store from './components/store';
 
 class App extends React.Component {
@@ -24,6 +24,7 @@ render() {
   return (
     <div>
       <Auth />
+      <route path="/create-quiz" compoents={CreateQuiz}/>
       <Page />
       
     </div>
