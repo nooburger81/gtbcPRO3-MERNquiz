@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const Login = () => {
+
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
    
@@ -13,6 +15,7 @@ const Login = () => {
                     </div> 
                         <input className="input" type="text" placeholder="Email Address" value={email}
                     onChange={ e => setEmail(e.target.value) }/>
+
                     </div>
                     <div className="input-wrapper">
                     <div>
@@ -29,4 +32,7 @@ const Login = () => {
         )
     }
 
+    
+   
 export default Login
+

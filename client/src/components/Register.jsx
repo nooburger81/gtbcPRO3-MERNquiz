@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 const Register = () => {
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -27,6 +28,7 @@ const Register = () => {
                   value={password} onChange={ e => setPassword(e.target.value) }/>
                 </div>
 
+
                 <div className="input-wrapper">
                     <div>First Name</div> 
                     <input className="input" type="text" placeholder="First Name" 
@@ -46,4 +48,8 @@ const Register = () => {
     )
   }
 
+
+
+
   export default Register
+
