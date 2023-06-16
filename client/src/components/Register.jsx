@@ -1,17 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default class Signup extends React.Component {
-constructor(props) {
-    super(props);
-    this.state = {
-        email: '',
-        password: '',
-        firstName: '',
-        lastName: ''
-    }
-}
+const Register = () => {
+    const [firstName, setFirstName] = useState;
+    const [lastName, setLastName] = useState;
+    const [email, setEmail] = useState;
+    const [password, setPassword] = useState;
 
- render() {
+ 
       return (
           <div className="sign-in-wrapper">
               <div className="form">
@@ -38,4 +33,5 @@ constructor(props) {
           </div>
       )
   }
-}
+
+export default Register

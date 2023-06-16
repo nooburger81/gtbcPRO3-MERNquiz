@@ -1,16 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default class Signin extends React.Component {
+const Login = () => {
+    const { email, setEmail } = useState
+    const { password, setPassword } = useState
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: '',
-        }
-    }
-
-    render() {
         return ( 
             <div className="sign-in-wrapper">
                 <div className="form">
@@ -28,4 +21,5 @@ export default class Signin extends React.Component {
             </div>
         )
     }
-}
+
+    export default Login;
