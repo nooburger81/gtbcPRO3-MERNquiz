@@ -1,6 +1,6 @@
 import Home from "./components/Home";
-import Login from "./components/Login";
-import Regiser from "./components/Register";
+import Login from "/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Login.jsx";
+import Register from '/Users/maeven/Desktop/gtbcPRO3-MERNquiz/client/src/components/Register.jsx'
 import Page from "./components/Page";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       <Home />
       <Login />
-      <Regiser />
+      <Register />
       <Page />
     </div>
   );
