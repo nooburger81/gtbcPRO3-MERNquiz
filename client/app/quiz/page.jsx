@@ -1,9 +1,8 @@
+'use client'
 import React, { useState } from 'react';
 import { quiz } from './data.js';
-import './page.css';
 
-
-const Page = () => {
+const page = () => {
 
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -53,7 +52,7 @@ const Page = () => {
     };
 
     return (
-    <div className='container'>
+    <div>
             <h1>Quiz Page</h1>
         <div>
             <h2>
@@ -85,7 +84,7 @@ const Page = () => {
             ) : (
             <div className='quiz-container'>
                 <h3>Results</h3>
-                <h3>Total {(result.score / 2500) * 100}%</h3>
+                <h3>Total {(result.score / 25) * 100}%</h3>
                 <p>
                     Total Questions: <span>{questions.length}</span>
                 </p>
@@ -106,4 +105,4 @@ const Page = () => {
     );
 };
 
-export default Page
+export default page
