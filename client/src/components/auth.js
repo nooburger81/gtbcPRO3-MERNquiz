@@ -2,8 +2,9 @@ import React from 'react';
 import Signup from './Login';
 import Signin from './Register';
 import axios from 'axios';
-import store from '../../store/index';
-import Toast from '../Toast/Toast';
+import store from './store/index';
+import Toast from './toast/Toast';
+import Nugget from '../assets/nuggies.png';
 
 export default class Auth extends React.Component {
 
@@ -65,7 +66,7 @@ export default class Auth extends React.Component {
             <div className="auth-wrapper">
                 <Toast model={this.state.showToast} message="Incorrect login" backgroundColor="#FF4539" />
                 <div className="left">
-                    <img src="https://freesvg.org/img/chemist.png" />
+                    <img src={Nugget} alt='chicken nugget'/>
                 </div>
 
                 <div className="right">

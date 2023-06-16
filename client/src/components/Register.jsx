@@ -1,20 +1,19 @@
 import React from 'react'
 
 export default class Signup extends React.Component {
+constructor(props) {
+    super(props);
+    this.state = {
+        email: '',
+        password: '',
+        firstName: '',
+        lastName: ''
+    }
+}
 
-  constructor(props) {
-      super(props);
-      this.state = {
-          email: '',
-          password: '',
-          firstName: '',
-          lastName: ''
-      }
-  }
-
-  render() {
+ render() {
       return (
-          <div className="sign-in-wrapper">
+          <div name='register' className="sign-in-wrapper">
               <div className="form">
                   <div className="input-wrapper">
                       <div>Email Address</div> 
