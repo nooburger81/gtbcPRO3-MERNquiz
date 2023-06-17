@@ -8,6 +8,7 @@ const models = require('./models/Users');
 const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('/Users/maeven/Desktop/gtbcPRO3-MERNquiz/server/schema');
+const quizRouter = require('./routes/quizzes');
 require('dotenv').config();
 
 const apolloServer = new ApolloServer({
@@ -41,6 +42,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 
 app.use('/api/users', userRoutes);
+app.use('/api/quizzes', quizRouter); 
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mernquiz-app', {
     useUnifiedTopology: true,
